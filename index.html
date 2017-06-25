@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- CSS -->
+    <!--Bootstrap 3 css file-->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!--Bootstrap fixes for hebrew (add class='rtl' to the body tag)-->
+    <link href="bootstrap/css/bootstrap-rtl.css" rel="stylesheet" />
+    <!--Bootstrap them - for changing the shape and colors of bootstrap objects like buttons-->
+    <!--<link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet" />-->
+    <!--The only file you should right your css-->
+    <link href="styles/myStyle.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <!--jQuery library-->
+    <script src="jScripts/jquery-1.12.0.min.js"></script>
+
+    <!--Bootstrap library-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--My JavaScript-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+<!--    <script src="jScripts/testGame.js"></script>-->
+<!--    <script src="jScripts/videoControllPanel"></script>-->
+        <link href="styles/animate.css" rel="stylesheet">
+        <script src="jScripts/DragAndDrop.js"></script>
+
+</head>
+
+<body class="rtl">
+<!--    <div id="container" class="container" onload="initCardGame()">-->
+        <!--סידור רצפים-->
+<!--
+        <div id="cardPile"> </div>
+        <div id="cardSlots"> </div>
+
+        <div id="successMessage">
+            <h2>You did it!</h2>
+            <button onclick="initCardGame()">Play Again</button>
+        </div>  
+-->
+        
+        
+        <!--סידור רצפים-->
+<!--
+        <div id="cardPile">
+ <div data="1" id="card1" style="background-image:url('/pic/grey.png');background-size:cover;" onclick="checkMatch(1)">1</div>
+       
+         <div data="2" id="card2" style="background-image:url('/pic/pink.png');background-size:cover;" onclick="checkMatch(2)">2</div>
+        
+     <div data="3" id="card3" style="background-image:url('/pic/red.png');background-size:cover;" onclick="checkMatch(3)">3</div>
+        
+     <div data="4" id="card4" style="background-image:url('/pic/yellow.png');background-size:cover;" onclick="checkMatch(4)">4</div>
+            
+        </div>
+        
+        <div id="cardSlots">
+         <div id="slot1" class="slotActive" data="1" onclick="checkMatch();" >one</div>
+         <div id="slot2" data="2">tow</div>
+         <div id="slot3" data="3">three</div>
+         <div id="slot4" data="4">four</div>
+        </div>
+
+        <div id="successMessage">
+            <h2>You did it!</h2>
+            <button onclick="init()">Play Again</button>
+        </div> 
+-->
+
+        
+       
+         <!--חקירת תמונה-->
+<!--
+        <div id="HotspotPlugin_image">
+                        <img src="/pic/grey.png">
+                    </div>
+
+
+
+        <script type="text/javascript" src="/jScripts/jquery.hotspot.js"></script>
+
+        <script type="text/javascript">
+            $("#HotspotPlugin_image").hotspot({
+                data: [
+                    { "x":288, "y":290, "Title":"The Title","Message":"Create the Message here" },
+                    { "x":143, "y":400, "Title":"jQuery Hotspot","Message":"This jQuery Plugin lets you create hotspot to any HTML element." }
+                ],
+                interactivity: "hover",
+            });
+        </script>
+-->
+        
+        <!--הטמעת סרטון-->
+        
+<div id="video-container">
+    <div class="container">
+            <div class="row">
+
+                <div id="video-container" class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    
+            
+                    <video controls width=100%>
+  <source src="video/FogTL.mp4"  type="video/mp4">
+<p>
+  Your browser does not support HTML5 video.
+</p>
+                </video>
+
+
+                </div>
+            </div>
+
+        </div>
+  <!-- Video -->
+<!--
+  <video  id="video1" width="400" height="240"  poster="/pic/pink.png">
+      <source src="" type="video/mp4">
+      <p>
+      Your browser doesn't support HTML5 video.
+      <a href="videos/mikethefrog.mp4">Download</a> the video instead.
+    </p>
+  </video>
+-->
+  <!-- Video Controls -->
+<!--
+  <div id="video-controls">
+    <button type="button" id="play-pause">Play</button>
+    <input type="range" id="seek-bar" value="0">
+    <button type="button" id="mute">Mute</button>
+    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+    <button type="button" id="full-screen">Full-Screen</button>
+  </div>
+-->
+</div>
+
+        
+        
+         
+        
+<!--
+        <video controls="controls" id="video1" width="400" height="240"  poster="/pic/pink.png">
+            <source src="" type="video/mp4">
+        </video>
+
+
+        <button onclick="changeSrc('RoofTL')">option1</button> 
+        <button onclick="changeSrc('FogTL')">option2</button> 
+        <button onclick="changeSrc('TIkal')">option3</button> 
+-->
+
+
+    </div>
+    <script type="text/javascript">
+       var myVideo = document.getElementById("video1"); 
+
+        function changeSrc(videoName){
+            
+         var videoFile = 'video/'+videoName+'.mp4';
+            $('#video1 source').attr('src', videoFile);
+            $("#video1")[0].load();
+            playPause();
+            $('#video1').attr('hidden', false);
+        }
+        
+        function playPause() { 
+            if (myVideo.paused) 
+                myVideo.play(); 
+            else 
+                myVideo.pause(); 
+        } 
+        
+
+        
+       
+
+      
+    </script>
+<!--        <script src="jScripts/testGame.js"></script>-->
+    
+
+   
+</body>
+
+</html>

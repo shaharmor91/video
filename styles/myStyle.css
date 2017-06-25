@@ -1,0 +1,232 @@
+
+/*******************סידור רצפים********************/
+
+#cardPile{
+    color:blue;
+    margin: 0 auto;
+background: #ffd;
+
+width: 910px;
+height: 120px;
+padding: 20px;
+border: 2px solid #333;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+-moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+-webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+#cardPile div{
+    float: left;
+width: 58px;
+height: 78px;
+padding: 10px;
+padding-top: 40px;
+padding-bottom: 0;
+border: 2px solid #333;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+margin: 0 0 0 10px;
+background: #fff;
+}
+
+#cardSlots{
+    color:red;
+    margin: 50px auto 0 auto;
+background: #ddf;
+
+width: 910px;
+height: 120px;
+padding: 20px;
+border: 2px solid #333;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+-moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+-webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+#cardSlots div{
+    float: left;
+width: 58px;
+height: 78px;
+padding: 10px;
+padding-top: 40px;
+padding-bottom: 0;
+border: 1px dashed #333;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+margin: 0 0 0 10px;
+background: #fff;
+}
+
+#cardSlots div:first-child, #cardPile div:first-child {
+margin-left: 0;
+}
+ 
+#cardSlots div.hovered {
+background: #aaa;
+}
+ 
+#cardSlots div {
+border-style: dashed;
+}
+ 
+#cardPile div {
+background: #666;
+color: #fff;
+font-size: 50px;
+text-shadow: 0 0 3px #000;
+}
+ 
+#cardPile div.ui-draggable-dragging {
+-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+-webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+ 
+/* Individually coloured cards */
+ 
+/*#card1.correct { background: red; }
+#card2.correct { background: brown; }
+#card3.correct { background: orange; }
+#card4.correct { background: yellow; }*/
+
+ 
+ 
+/* "You did it!" message */
+#successMessage {
+position: absolute;
+left: 580px;
+top: 250px;
+width: 0;
+height: 0;
+z-index: 100;
+background: #dfd;
+border: 2px solid #333;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+-moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+-webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+padding: 20px;
+}
+
+.slotActive {
+    border: 1px solid yellow !important;
+}
+.slotCorrect {
+    border: 1px solid green !important;
+}
+
+
+
+/*******************חקירת תמונה********************/
+
+
+#HotspotPlugin_image {
+	position: relative;
+	display: inline-block;
+}
+
+/*
+* Hotspot message
+* 
+*/
+.HotspotPlugin_Hotspot > div {
+	background: rgba(26, 188, 156, 0.4);
+	width: 140px;
+	height: 94px;
+	margin: -94px -60px;
+	border-radius: 4px;
+	overflow: hidden;
+	font-size: 10px;
+	display:none; /* Required */
+}
+.HotspotPlugin_Hotspot:hover > div {
+	display: block; /* Required */
+}
+.HotspotPlugin_Hotspot > div > .Hotspot_Title {
+	background: rgba(255, 255, 255, 0.4);
+	height: 20px;
+	font-weight: bold;
+	padding: 4px 10px;
+}
+.HotspotPlugin_Hotspot > div > .Hotspot_Message {
+	background: rgba(255, 255, 255, 0.4);
+	margin-top: 2px;
+	padding: 4px 10px;
+	height: 72px;
+	overflow-y: auto;
+}
+
+/*
+* Hotspots
+* 
+*/
+.HotspotPlugin_Hotspot {
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	background: #1ABC9C;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 200;
+	margin-left: -10px;
+	margin-top: -10px;
+}
+
+/*
+* Hotspots immediately after creation - admin-mode
+* 
+*/
+.HotspotPlugin_inc {
+	background: #4E6FF3;
+}
+
+/*
+* Overlay used in the admin-mode
+* 
+*/
+span.HotspotPlugin_Overlay {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.4);
+	top: 0px;
+	left: 0px;
+	cursor: pointer;
+}
+span.HotspotPlugin_Overlay > p {
+	color: #ffffff;
+	background: rgba(255, 255, 255, 0.4);
+	margin-top: 0px;
+	padding: 20px;
+	text-align: center;
+}
+
+/*
+* Buttons - admin-mode
+* 
+*/
+button.HotspotPlugin_Done {
+	position: absolute;
+	right: -120px;
+	bottom: 38px;
+}
+button.HotspotPlugin_Remove {
+	position: absolute;
+	right: -120px;
+	bottom: 2px;
+}
+button.HotspotPlugin_Server {
+	position: absolute;
+	right: -120px;
+	bottom: 74px;
+}
+
+
